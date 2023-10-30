@@ -45,11 +45,9 @@ html{
 }
 
 .name{
-
     display: flex;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
-    
 }
 
 .leftPanel ul{
@@ -81,7 +79,19 @@ html{
     justify-content: center;
     align-items: center;
     padding: 12px;
-    gap:28px
+    gap:28px;
+    
+}
+
+
+
+
+.topBar{
+    border-bottom: 1px solid rgba(161, 161, 241, 0.322);
+    -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    font-family: Roboto2;
 }
 
 .contentPage{
@@ -102,12 +112,12 @@ html{
     grid-template-rows: repeat(auto-fill, 400px);
     gap:64px;
     justify-content: center;
+    border-right: 2px solid var(--blue-sidebar-color);
    
     
 }
 
 .projectCards{
-    background-color: lightblue;
     height: 400px;
     min-width:350px;
     max-width:400px;
@@ -118,6 +128,7 @@ html{
     background-color: var(--grey-background-color);
     grid-template-rows:1fr;
     display: grid;
+    padding-left: 10%;
 }
 
 .rightSideBarTopBox {
@@ -295,3 +306,72 @@ html{
     --blue-sidebar-color:#0284c7;
 
 }
+
+
+/* css for searchbar */
+
+
+  .container{
+    position: relative;
+    padding: 20px 50px;
+  }
+  
+  .input{
+    width: 350px;
+    border: 3px solid var(--blue-sidebar-color);
+    background: transparent;
+    padding: 15px 30px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 18px;
+    color: var(--blue-sidebar-color);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color:var(--blue-sidebar-color);
+    font-family: Roboto;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color:var(--blue-sidebar-color);
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: var(--blue-sidebar-color);
+  }
+  
+  .close-btn{
+    position: absolute;
+    top: 27px;
+    right: 80px;
+    font-size: 35px;
+    cursor: pointer;
+    color:var(--blue-sidebar-color);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .close-btn.active{
+    opacity: 1;
+    animation: animate 0.5s linear;
+  }
+  
+  @keyframes animate{
+    0%{
+      transform: scale(1);
+    }
+    25%{
+      transform: scale(1.2);
+    }
+    50%{
+      transform: scale(1.5);
+    }
+    75%{
+      transform: scale(1.2);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
