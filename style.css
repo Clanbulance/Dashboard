@@ -36,7 +36,7 @@ html{
 
 .leftPanel{
     display: grid;
-    grid-template-rows: 10% minmax(30vh,50vh);
+    grid-template-rows: 20vh minmax(30vh,50vh);
     padding:12px;
     background-color: var(--blue-sidebar-color);
     font-weight: 900;
@@ -45,8 +45,11 @@ html{
 }
 
 .name{
-    margin-top: 12px;
-    margin-left: 12px;
+
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    
 }
 
 .leftPanel ul{
@@ -256,7 +259,7 @@ html{
 
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:767px){
     .leftPanel{
         display: none;
     }
