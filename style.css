@@ -28,8 +28,8 @@ html{
 .main{
     height: 100vh;
     display: grid;
-    grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr;
-    grid-template-rows: 0.5fr 1.5fr 1.5fr  minmax(0.5fr, 1fr);
+    grid-template-columns: 0.5fr 1.5fr 1.5fr 0.5fr;
+    grid-template-rows: 0.1fr 1.5fr 1.5fr  minmax(0.5fr, 1fr);
     grid-auto-flow: row;
     grid-template-areas: 
     "leftpanel topbar topbar topbar "  
@@ -93,6 +93,8 @@ margin:auto
     border-bottom: 1px solid rgba(161, 161, 241, 0.322);
     font-family: Roboto2;
     grid-area:topbar;
+    display: grid;
+    
 }
 
 
@@ -100,21 +102,24 @@ margin:auto
     display:grid;
     background-color: var(--white-background-color);
     list-style: none;
-    padding: 12px;
-    padding-top: 16px;
-  
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "theme search search linkedin odin";
+      
+        align-items: center;
 }
 
 
 .projects{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(1fr,2fr));
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(1fr,2fr));
+    grid-template-rows: repeat(3, 1fr);
     grid-auto-flow: column;
     gap:32px;
-    border-right: 2px solid var(--primary-color);
     grid-area:projects; 
     margin-top: 64px;
+    justify-content: space-evenly;
     padding:12px;
 
     
@@ -127,12 +132,14 @@ margin:auto
 }
 
 .rightSideBar{
-    background-color: var(--grey-background-color);
-    grid-template-rows:1fr;
     display: grid;
-    padding-left: 10%;
+    
     grid-area: rightsidebar; 
-    margin-top:64px;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    background-color: var(--primary-color);
+     
 }
 
 
@@ -141,34 +148,28 @@ margin:auto
     list-style:none;
     font-family: 'Roboto2', sans-serif;
     font-weight: 500;
-    display:grid;
-    grid-template-rows: repeat(auto-fill,1fr);
-    gap:16px;
-    
+    width: 100%;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    PADDING:24PX;
 }
+
 
 .sources li{
     border-bottom: 1px solid var(--grey-background-color);
+    width: 50%;
+    border:1px
+    
 }
 
 .sources li a{
     text-decoration: none;
-    color:black;
-    
+    color:white;
 }
-
-.rightSideBar::before{
-    content: "Usefull Sources";
-    position: relative;
-    top:-50px;
-    font-weight: bold;
-    font-size: 0.8cm;
-    font-family: 'Roboto', sans-serif;
-    left:-10px;
-}
-
-
-
 
 .game{
     background-image:url(images/game.png);
@@ -274,10 +275,10 @@ margin:auto
 
   .containerSearch{
     display: grid;
-    grid-column-start: 3;
-    padding-left: 64px;
-
-   
+    grid-area: search;
+    justify-content: center;
+    
+    
   }
 
   .Linkedin{
@@ -293,7 +294,7 @@ margin:auto
   }
   
   .input{
-    width: 350px;
+    width: 100%;
     border: 3px solid var(--primary-color);
     background: transparent;
     padding: 15px 30px;
@@ -376,7 +377,9 @@ margin:auto
 .theme-switch-container { 
     display: flex; 
     align-items: center; 
-    
+   justify-content: center;
+   height:100%;
+ 
 } 
   
 .theme-slider { 
@@ -435,7 +438,7 @@ input:checked+.slider:before {
     .main{
       display:grid;
       grid-template-columns: 1fr ;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 0.5fr;
       grid-template-areas: 
       "leftpanel"
       "topbar"
@@ -454,10 +457,25 @@ input:checked+.slider:before {
        margin-right: auto;
     }
 
-.projectCards{
-  
-}
+    .leftPanel{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr;
+       
+       
+    
+    }
 
+    .leftPanel ul{
+        display: grid;
+        grid-template-columns: repeat(8,0.5fr);
+        grid-template-rows: 1fr;
+        gap:2px;
+        grid-row-start: 2;
+        margin-bottom: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 
 .input{
     display: none;
@@ -469,30 +487,25 @@ input:checked+.slider:before {
     grid-template-areas:
     " theme linkedin odin "
     ;
+    align-items: center;
+    
+    
 }
 
 .rightSideBar{
-    justify-content: center;
-    padding: 0px;
-   
-    background-color: var(--background-color);
+    background-color:var(--primary-color);
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+ 
 }
-.rightSideBar .sources{
+.sources{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    border-radius: 10px;
-   
-   
+    grid-template-rows: 1fr 1fr;
+    border:1px solid red;
+    padding-left: 25%;
+    padding-right: 25%;
     
-    
-}
-
-
-.rightSideBar::before{
-   font-size: 1em;
-   top:-20px;
-   margin-left: auto;
-   margin-right: auto;
 }
 }
