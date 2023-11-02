@@ -50,7 +50,8 @@ html{
     font-weight: 900;
     color:white;
     grid-area: leftpanel;
-    
+    font-family: roboto;
+    font-size: 1em;
 
 }
 
@@ -80,7 +81,7 @@ html{
 
 
 .lisvg svg {
-height:80%;
+height:2em;
 fill: white;
 display: block;
 margin:auto
@@ -433,7 +434,7 @@ input:checked+.slider:before {
 
 
 
-@media screen and (max-width:767px){
+@media screen and (max-width:865px){
 
     .main{
       display:grid;
@@ -460,21 +461,17 @@ input:checked+.slider:before {
     .leftPanel{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 0.5fr;
-       
-       
-    
+        grid-template-rows: 1fr 0.4fr;
+  
     }
 
     .leftPanel ul{
         display: grid;
-        grid-template-columns: repeat(8,0.5fr);
+        grid-template-columns: repeat(8,1fr);
         grid-template-rows: 1fr;
         gap:2px;
         grid-row-start: 2;
-        margin-bottom: 0px;
-        padding-left: 12px;
-        padding-right: 12px;
+      
     }
 
 .input{
@@ -487,9 +484,7 @@ input:checked+.slider:before {
     grid-template-areas:
     " theme linkedin odin "
     ;
-    align-items: center;
-    
-    
+   gap:10%;
 }
 
 .rightSideBar{
@@ -503,7 +498,6 @@ input:checked+.slider:before {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    border:1px solid red;
     padding-left: 25%;
     padding-right: 25%;
     
