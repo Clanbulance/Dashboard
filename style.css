@@ -175,7 +175,7 @@ margin:auto
 .game{
     background-image:url(images/game.png);
     background-size: contain;
-    border-left: rgb(53, 43, 43) 8px solid;
+    border-left: var(--primary-color) 8px solid;
 }
 
 .game::before{
@@ -191,7 +191,7 @@ margin:auto
 .calc{
     background-image:url(images/calculator.png);
     background-size: contain; 
-    border-left: rgb(53, 43, 43) 8px solid;
+    border-left: var(--primary-color) 8px solid;
 }
 
 .calc::before{
@@ -207,7 +207,7 @@ margin:auto
 .sketch{
     background-image:url(images/output-onlinepngtools.png);
     background-size:110%; 
-    border-left: rgb(53, 43, 43) 8px solid;
+    border-left: var(--primary-color) 8px solid;
     
 }
 
@@ -223,7 +223,7 @@ margin:auto
 .landing{
     background-image: url(images/landing.png);
     background-size: cover;
-    border-left: rgb(53, 43, 43) 8px solid;
+    border-left: var(--primary-color) 8px solid;
 }
 
 .landing::before{
@@ -238,7 +238,7 @@ margin:auto
 .signup{
     background-image: url(images/signup.png);
     background-size: cover;
-    border-left: rgb(53, 43, 43) 8px solid;
+    border-left: var(--primary-color) 8px solid;
 }
 
 .signup::before{
@@ -252,6 +252,22 @@ margin:auto
     
 }
 
+.book{
+    background-image: url(images/book.png);
+    background-size: cover;
+    border-left: var(--primary-color) 8px solid;
+}
+
+.book::before{
+    content: "Sign Up Form";
+    position: relative;
+    top:-28px;
+    left:10px;
+    font-size: large;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    
+}
 
 
 
@@ -441,8 +457,8 @@ input:checked+.slider:before {
       grid-template-columns: 1fr ;
       grid-template-rows: 1fr 1fr 1fr 0.5fr;
       grid-template-areas: 
-      "leftpanel"
       "topbar"
+      "leftpanel"
       "projects"
       "rightsidebar";
       
@@ -451,7 +467,7 @@ input:checked+.slider:before {
     .projects{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fill,1fr);
         border:none;
        align-items: center;
        margin-left: auto;
